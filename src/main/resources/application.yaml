@@ -13,3 +13,9 @@ server:
     include-binding-errors: ALWAYS
     include-stacktrace: NEVER
     include-exception: false
+
+springdoc:
+  swagger-ui:
+    urlsPrimaryName: currency
+  api-docs:
+    path: /openapi/currencies-doc
