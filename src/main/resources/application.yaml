@@ -1,13 +1,19 @@
 spring:
   application:
     name: @project.name@
+  liquibase:
+    change-log: classpath:db/changelog.xml
+  #profiles:
+    #active: local
   jpa:
     hibernate:
       ddl-auto: validate
-  liquibase:
-    change-log: classpath:db/changelog.xml
-  profiles:
-    active: local
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:em_currency_db
+    username: sa
+    password:
 server:
   error:
     include-message: ALWAYS
@@ -19,14 +25,6 @@ springdoc:
     urlsPrimaryName: currency
   api-docs:
     path: /openapi/currencies-doc
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8085/eureka/
-    registerWithEureka: true
-  fetchRegistry: ture
 info:
   app:
     name: @project.name@
@@ -46,3 +44,7 @@ management:
 endpoints:
   shutdown:
     enabled: true
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
