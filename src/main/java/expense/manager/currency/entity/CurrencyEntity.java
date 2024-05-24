@@ -15,11 +15,14 @@ import java.io.Serializable;
 @Entity(name = "currency")
 public class CurrencyEntity implements Serializable {
 
-    private static final long serialVersionUID = -9153638561553445322L;
+	private static final long serialVersionUID = -9153638561553445322L;
 
-    @Id
-    private long id;
-    @Column(unique = true)
-    private String name;
-    private String iconUrl;
+	@Id
+	private long id;
+
+	@Column(unique = true)
+	private String name;
+
+	private String iconUrl;
+
 }

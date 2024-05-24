@@ -15,21 +15,22 @@ import java.util.List;
 @Service
 public class CurrencyServiceImpl implements CurrencyService {
 
-    @Autowired
-    private CurrencyRepository repository;
+	@Autowired
+	private CurrencyRepository repository;
 
-    @Override
-    public List<CurrencyResponse> findAll() {
-        Iterable<CurrencyEntity> currencies = repository.findAll();
-        ModelMapper mapper = new ModelMapper();
-        return mapper.map(currencies, new TypeToken<List<CurrencyResponse>>() {
-        }.getType());
-    }
+	@Override
+	public List<CurrencyResponse> findAll() {
+		Iterable<CurrencyEntity> currencies = repository.findAll();
+		ModelMapper mapper = new ModelMapper();
+		return mapper.map(currencies, new TypeToken<List<CurrencyResponse>>() {
+		}.getType());
+	}
 
-    @Override
-    public CurrencyResponse findById(Long id) {
-        ModelMapper mapper = new ModelMapper();
-        CurrencyEntity currencyEntity = repository.findById(id).orElseThrow(RecordNotFoundException::new);
-        return mapper.map(currencyEntity, CurrencyResponse.class);
-    }
+	@Override
+	public CurrencyResponse findById(Long id) {
+		ModelMapper mapper = new ModelMapper();
+		CurrencyEntity currencyEntity = repository.findById(id).orElseThrow(RecordNotFoundException::new);
+		return mapper.map(currencyEntity, CurrencyResponse.class);
+	}
+
 }
