@@ -5,4 +5,6 @@ import java.util.List;
 
 public interface CurrencyService {
     List<CurrencyResponse> findAll();
+
+    CurrencyResponse findById(Long id);
 }
