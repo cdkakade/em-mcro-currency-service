@@ -23,5 +23,11 @@
             <column name="icon_url" value="http://www.google.com"/>
         </insert>
     </changeSet>
+    <changeSet author="chandrashekhar.kakade" id="16496657114677">
+        <insert catalogName="em_currency_db" schemaName="public" tableName="currency">
+            <column name="name" value="Japan Yen"/>
+            <column name="icon_url" value="http://www.google.com"/>
+        </insert>
+    </changeSet>
 
 </databaseChangeLog>

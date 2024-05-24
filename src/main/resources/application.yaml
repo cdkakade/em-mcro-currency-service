@@ -41,6 +41,15 @@ management:
   endpoint:
     shutdown:
       enabled: true
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http:
+          server:
+            requests: true
+  observations:
+    key-values:
+      application: @project.name@
 endpoints:
   shutdown:
     enabled: true
