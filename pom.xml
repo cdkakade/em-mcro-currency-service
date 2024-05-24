@@ -10,6 +10,6 @@
     </parent>
     <artifactId>currency-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Currency</name>
+    <name>currency-service</name>
     <description>Expense Manager Currency Project</description>
 </project>
