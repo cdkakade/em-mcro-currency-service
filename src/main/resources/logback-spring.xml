@@ -12,7 +12,7 @@
 
     <appender name="LOKI" class="com.github.loki4j.logback.Loki4jAppender">
         <http>
-            <url>http://loki.my-grafana.svc.cluster.local/loki/api/v1/push</url>
+            <url>http://loki-gateway.my-grafana.svc.cluster.local/loki/api/v1/push</url>
             <tenantId>expense-manager</tenantId>
         </http>
 
