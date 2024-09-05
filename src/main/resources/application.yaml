@@ -61,12 +61,8 @@ eureka:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8070/eureka/}
     registerWithEureka: true
     fetchRegistry: true
-
-#logging:
-#  pattern:
-#    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-#logging:
-#  level:
-#    org:
-#      zalando:
-#        logbook: TRACE
+logging:
+  level:
+    org:
+      zalando:
+        logbook: TRACE
