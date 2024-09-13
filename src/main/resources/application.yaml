@@ -14,12 +14,11 @@ spring:
     url: jdbc:h2:mem:em_currency_db
     username: sa
     password:
-server:
-  error:
-    include-message: ALWAYS
-    include-binding-errors: ALWAYS
-    include-stacktrace: NEVER
-    include-exception: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI:http://localhost:8074/realms/expense-manager/protocol/openid-connect/certs}
 springdoc:
   swagger-ui:
     urlsPrimaryName: currency
